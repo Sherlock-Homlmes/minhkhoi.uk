@@ -1,31 +1,31 @@
 version: "3.9"
 
 services:
-  # nginx:
-  #   image: nginx:latest
-  #   volumes:
-  #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-  #   ports:
-  #     - 80:80
-  #     - 443:443
-  #   depends_on:
-  #     - client
-  #     # - server
-  #   restart: on-failure
-  #   networks:
-  #     - app-network
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - client
+      - server
+    restart: on-failure
+    networks:
+      - app-network
 
-  # client:
-  #   build:
-  #     context: ./client
-  #   ports:
-  #     - 5173:5173
-  #   volumes:
-  #     - ./client:/client
-  #   networks:
-  #     - app-network
-  #   command: >
-  #     sh -c " cd /client && yarn install && yarn dev"
+  client:
+    build:
+      context: ./client
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client:/client
+    networks:
+      - app-network
+    command: >
+      sh -c "cd /client && npm install && npm run dev"
 
   server:
     build:
