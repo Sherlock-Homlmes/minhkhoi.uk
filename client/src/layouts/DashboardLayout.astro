@@ -1,0 +1,29 @@
+---
+    import { DarkMode } from "flowbite-svelte";
+    import SideBar from "@components/SideBar.svelte";
+    import Notification from "@components/Notification.svelte";
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <BaseHead title={title}/> -->
+  </head>
+  <body>
+    <SideBar client:load>
+      <slot />
+    </SideBar>
+
+    <!-- Dark mode -->
+    <div class="absolute bottom-4 right-4 ...">
+      <DarkMode
+        size="lg"
+        class="text-gray-500 dark:text-gray-400 bg-gray-200 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-500 rounded-lg text-xl p-2"
+        client:load
+    />
+    </div>
+    <!-- Notifications -->
+    <Notification client:load />
+    <!-- <Footer /> -->
+  </body>
+</html>
