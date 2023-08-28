@@ -1,0 +1,15 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "directory": "client",
+      "changeProcessCWD": true
+    }
+  ],
+  // "[python]": {
+  //   "editor.codeActionsOnSave": {
+  //     "source.fixAll": true,
+  //     "source.organizeImports": true
+  //   },
+  //   "editor.formatOnType": true
+  // },
+}

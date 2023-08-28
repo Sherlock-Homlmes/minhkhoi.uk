@@ -1,0 +1,17 @@
+{
+  "name": "betterme.study",
+  "private": true,
+  "scripts": {
+    "build:client": "cd ./client && yarn build",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2"
+  },
+  "dependencies": {
+    "astro": "^2.10.14"
+  }
+}
